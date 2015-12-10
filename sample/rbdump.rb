@@ -45,3 +45,6 @@ end
 print_str('Abstract Structure Tree (AST) Node - C Base') do
   system(RUBY_DUMP_TREE_FORMAT % ruby_file)
 end
+print_str('YARV String') do
+  puts RubyVM::InstructionSequence.compile(code).disasm
+end
