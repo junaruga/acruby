@@ -34,13 +34,13 @@ open(ruby_file) do |f|
 end
 
 print_str('Ruby') do
-   puts "%s\n" % code
+  puts "%s\n" % code
 end
 print_str('Toeken Array') do
-   pp Ripper.lex(code)
+  pp Ripper.lex(code)
 end
 print_str('Abstract Structure Tree (AST) Node - Ripper') do
-   pp Ripper.sexp(code)
+  pp Ripper.sexp(code)
 end
 print_str('Abstract Structure Tree (AST) Node - C Base') do
   system(RUBY_DUMP_TREE_FORMAT % ruby_file)
