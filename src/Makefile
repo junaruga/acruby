@@ -26,6 +26,7 @@ $(TARGET) : $(OBJS)
 
 format:
 	find . -name "*.c" | xargs gindent -kr -nut
+.PHONY : format
 
 clean :
 	rm -f *.d *.o $(TARGET)
