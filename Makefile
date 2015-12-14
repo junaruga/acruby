@@ -7,7 +7,8 @@ TESTS = $(wildcard sample/test/*.rb)
 all format clean:
 	$(MAKE) -C src $@
 
-# test : all
+test : all
+	$(TARGET) $(TESTS)
 # 	$(TARGET) -c $(TESTS)
 
 check:
