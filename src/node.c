@@ -3,5 +3,5 @@
 
 int node_parse_file(const char *fname)
 {
-    return  0;
+    return 0;
 }

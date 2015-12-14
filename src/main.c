@@ -13,11 +13,11 @@ int main(int argc, const char **argv)
         const char *s = argv[1] + 1;
         while (*s) {
             switch (*s) {
-                case 'v':
-                    verbose = TRUE;
-                    break;
-                default:
-                    fprintf(stderr, "%s: unknown option -%c\n", prog, *s);
+            case 'v':
+                verbose = TRUE;
+                break;
+            default:
+                fprintf(stderr, "%s: unknown option -%c\n", prog, *s);
             }
             s++;
         }
@@ -31,7 +31,8 @@ int main(int argc, const char **argv)
         }
     } else {
         error_num += 1;
-        fprintf(stderr, "%s: Ruby file is required as a argument.\n", prog);
+        fprintf(stderr, "%s: Ruby file is required as a argument.\n",
+                prog);
     }
 
     if (error_num == 0) {

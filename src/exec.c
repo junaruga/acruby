@@ -2,5 +2,5 @@
 
 int node_run(const char *fname)
 {
-    return  0;
+    return 0;
 }
