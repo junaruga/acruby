@@ -12,4 +12,4 @@
 # define TRUE 1
 #endif
 
-#endif /* ACRUBY_H */
+#endif                          /* ACRUBY_H */

@@ -25,7 +25,7 @@ $(TARGET) : $(OBJS)
 	$(CC) $(CFLAGS) $(OBJS) -o $(TARGET) $(LIBS)
 
 format:
-	find . -name "*.c" | xargs gindent -kr -nut
+	find . -name "*.c" -o -name "*.h" | xargs gindent -kr -nut
 .PHONY : format
 
 clean :
