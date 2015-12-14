@@ -19,6 +19,9 @@ $(TARGET) : $(OBJS)
 	mkdir -p "$$(dirname $(TARGET))"
 	$(CC) $(CFLAGS) $(OBJS) -o $(TARGET) $(LIBS)
 
+format:
+	find . -name "*.c" | xargs gindent -kr -nut
+
 clean :
 	rm -f *.d *.o $(TARGET)
 .PHONY : clean
