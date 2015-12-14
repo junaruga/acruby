@@ -15,7 +15,10 @@ DEPS:=$(OBJS:.o=.d)
 all : $(TARGET)
 .PHONY : all
 
-%.o: %.c
+# -MMD: dependency info is written to .d files.
+#       Targets are only user head files.
+# -MP:  Create phony target for each dependency
+%.o : %.c
 	$(CC) $(CFLAGS) -MMD -MP -c -o $@ $<
 
 $(TARGET) : $(OBJS)
