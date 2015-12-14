@@ -9,7 +9,7 @@
 #endif
 
 #ifndef TRUE
-# define TRUE 0
+# define TRUE 1
 #endif
 
 #endif /* ACRUBY_H */
