@@ -1,7 +1,7 @@
-.PHONY: dummy check
+.PHONY: all clean check
 
-dummy:
-	@echo "Not implemented."
+all clean:
+	$(MAKE) -C src $@
 
 check:
 	ruby ./sample/rbdump.rb ./sample/test/times.rb

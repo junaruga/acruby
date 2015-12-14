@@ -7,5 +7,17 @@
 *~
 # Hidemaru
 *.BAK
+# Global
+GPATH
+GRTAGS
+GTAGS
+# Ctags
+TAGS
+tags
+# C
+*.d
+*.o
 # Rbenv
 .ruby-version
+# This project
+/bin
