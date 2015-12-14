@@ -2,8 +2,11 @@ CC = gcc
 TOP = ..
 TARGET = $(TOP)/bin/acruby
 CDEFS =
+# -g: Generate source level debug information
+# -Wall: This enables all the warnings
 CFLAGS = -g -Wall $(CDEFS)
-LIBS = -lpthread -lgc
+# LIBS = -lfoo -lbar
+LIBS =
 
 SRCS=$(wildcard *.c)
 OBJS:=$(SRCS:.c=.o)
@@ -17,7 +20,7 @@ all : $(TARGET)
 
 $(TARGET) : $(OBJS)
 	mkdir -p "$$(dirname $(TARGET))"
-	$(CC) $(CFLAGS) $(OBJS) -o $(TARGET) $(LIBS)
+	$(CC) $(CFLAGS) $(OBJS) -o $(TARGET)
 
 format:
 	find . -name "*.c" | xargs gindent -kr -nut
