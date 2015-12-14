@@ -11,8 +11,8 @@ SRCS=$(wildcard *.c)
 OBJS:=$(SRCS:.c=.o)
 DEPS:=$(OBJS:.o=.d)
 
-all : $(TARGET)
 .PHONY : all
+all : $(TARGET)
 
 # -MMD: dependency info is written to .d files.
 #       Targets are only user head files.
@@ -24,12 +24,12 @@ $(TARGET) : $(OBJS)
 	mkdir -p "$$(dirname $(TARGET))"
 	$(CC) $(CFLAGS) $(OBJS) -o $(TARGET) $(LIBS)
 
+.PHONY : format
 format:
 	find . -name "*.c" -o -name "*.h" | xargs gindent -kr -nut
-.PHONY : format
 
+.PHONY : clean
 clean :
 	rm -f *.d *.o $(TARGET)
-.PHONY : clean
 
 -include $(DEPS)
